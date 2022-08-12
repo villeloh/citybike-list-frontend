@@ -1,16 +1,21 @@
-import { ReactScrollableList } from 'react-scrollable-list';
-import React, { Component } from 'react';
-import { PAGE_LIMIT, DEFAULT_LIST_ITEM_HEIGHT } from '../constants';
+import ReactScrollableList from 'react-scrollable-list';
+import TripListItem from './TripListItem';
+import React from 'react';
+import { ITEMS_PER_PAGE_LIMIT, DEFAULT_LIST_ITEM_HEIGHT } from '../constants';
 
-function TripsPage (props) {
+export default function TripsPage (props) {
+
+  const listItems = props.trips.map(trip => {
+    return { id: trip._id, content: <TripListItem />};
+  });
 
   return (
     <div>
       <ReactScrollableList
         heightOfItem={DEFAULT_LIST_ITEM_HEIGHT}
-        maxItemsToRender={PAGE_LIMIT}
+        maxItemsToRender={ITEMS_PER_PAGE_LIMIT}
         style={{ color: '#333' }}
-        listItems={[{ id: 0, content: 0 }]}
+        listItems={listItems}
       />
     </div>
   );

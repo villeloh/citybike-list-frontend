@@ -1,0 +1,22 @@
+import React from 'react';
+
+export default function Header (props) {
+
+  const handleClick = (pageChoice, e) => {
+    e.preventDefault();
+
+    // clumsy, but it works for 2 buttons
+    if (pageChoice === 'trips') {
+      props.showTripsPage();
+    } else if (pageChoice === 'stations') {
+      props.showStationsPage();
+    }
+  };
+
+  return (
+    <div className="Header">
+      <button className="Header-Btn" onClick={(e) => handleClick('trips', e)}>Trips</button>
+      <button className="Header-Btn" onClick={(e) => handleClick('stations', e)}>Stations</button>
+    </div>
+  );
+}

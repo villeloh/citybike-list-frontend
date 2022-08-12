@@ -27,3 +27,20 @@
   margin: 0.5rem;
   border: 5px solid black;
 }
+
+.Station-List-Item {
+  margin: 0.4rem;
+  margin-right: 0rem;
+  border: 5px solid black;
+}
+
+.Header {
+  display: flex;
+}
+
+.Header-Btn {
+  flex: 1;
+  margin: 0.5rem;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+}
