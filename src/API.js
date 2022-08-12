@@ -6,7 +6,7 @@ export const API = {
 
   },
   
-  getTrips: (skip, limit) => {
+  getTrips: (skip, limit, order) => {
   
   },
   

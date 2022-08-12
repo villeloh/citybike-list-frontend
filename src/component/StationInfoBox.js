@@ -2,6 +2,8 @@ import React from 'react';
 
 export default function StationInfoBox (props) {
 
+  const stationInfo = props.stationInfo;
+
   return (
     <div className="Station-Info-Box">
       <table>
@@ -12,20 +14,20 @@ export default function StationInfoBox (props) {
           <th>Capacity</th>
         </tr>
         <tr>
-          <td>{props.name || '-'}</td>
-          <td>{props.address || '-'}</td>
-          <td>{props.operator || '-'}</td>
-          <td>{props.capacity || '-'}</td>
+          <td>{stationInfo.name || '-'}</td>
+          <td>{stationInfo.address || '-'}</td>
+          <td>{stationInfo.operator || '-'}</td>
+          <td>{stationInfo.capacity || '-'}</td>
         <tr>
           <th>Trips started here</th>
           <th>Trips ended here</th>
           <th>Avg. length of started trips</th>
           <th>Avg. length of ended trips</th>
         </tr>
-          <td>{props.numOfTripsFrom || '-'}</td>
-          <td>{props.numOfTripsTo || '-'}</td>
-          <td>{props.avgLengthOfTripFrom || '-'}</td>
-          <td>{props.avgLengthOfTripTo || '-'}</td>
+          <td>{stationInfo.numOfTripsFrom || '-'}</td>
+          <td>{stationInfo.numOfTripsTo || '-'}</td>
+          <td>{stationInfo.avgLengthOfTripFrom || '-'}</td>
+          <td>{stationInfo.avgLengthOfTripTo || '-'}</td>
         </tr>
       </table> 
     </div>

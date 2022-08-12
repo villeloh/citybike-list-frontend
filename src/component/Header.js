@@ -2,13 +2,13 @@ import React from 'react';
 
 export default function Header (props) {
 
-  const handleClick = (pageChoice, e) => {
+  const handleClick = (selectedPage, e) => {
     e.preventDefault();
 
     // clumsy, but it works for 2 buttons
-    if (pageChoice === 'trips') {
+    if (selectedPage === 'trips') {
       props.showTripsPage();
-    } else if (pageChoice === 'stations') {
+    } else if (selectedPage === 'stations') {
       props.showStationsPage();
     }
   };

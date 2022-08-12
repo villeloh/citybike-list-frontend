@@ -14,7 +14,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(START_PAGE);
   const [tripOrder, setTripOrder] = useState(TRIP_ORDER.DEFAULT);
   const [skip, setSkip] = useState(0);
-  const [listItems, setListItems] = [];
+  const [listItems, setListItems] = useState([]);
 
   useEffect(async () => {
 
@@ -23,7 +23,7 @@ function App() {
 
       items = await API.getStations(skip, ITEMS_PER_PAGE_LIMIT);
     } else {
-      items = await API.getTrips(skip, ITEMS_PER_PAGE_LIMIT);
+      items = await API.getTrips(skip, ITEMS_PER_PAGE_LIMIT, tripOrder);
     }
     setListItems(items);
   }, [currentPage, skip, tripOrder]);
@@ -48,12 +48,17 @@ function App() {
     setSkip(skip + 1);
   };
 
+  const selectTripOrder = (order) => {
+
+    setTripOrder(order);
+  };
+
   let pageToRender;
 
   if (currentPage === 'stations') {
-    pageToRender = <StationsPage />;
+    pageToRender = <StationsPage stations={listItems}/>;
   } else {
-    pageToRender = <TripsPage />;
+    pageToRender = <TripsPage trips={listItems} selectTripOrder={selectTripOrder}/>;
   }
 
   return (
