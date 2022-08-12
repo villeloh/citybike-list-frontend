@@ -16,3 +16,14 @@
 .App-link {
   color: #61dafb;
 }
+
+.react-scrollable-list-item {
+  color: #456;
+  background-color: #61dafb;
+  margin: 0.5rem;
+}
+
+.Station-Info-Box {
+  margin: 0.5rem;
+  border: 5px solid black;
+}

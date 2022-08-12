@@ -1,13 +1,10 @@
 import './App.css';
+import StationsPage from './component/StationsPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Citybike List
-        </p>
-      </header>
+      <StationsPage />
     </div>
   );
 }
