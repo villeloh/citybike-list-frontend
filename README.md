@@ -25,7 +25,7 @@ The project is run locally on your own computer.
 
 ## About the project
 
-# Tech choices
+### Tech choices
 
 I went with React and plain JS because time was of the essence and they're the most familiar frontend tools to me.
 I managed to install a list-scrolling library before the Wifi broke on my computer, but that was it; I'm not really a 
@@ -35,7 +35,7 @@ I really struggled with the CSS given the time constraint (I found out about the
 so there are a lot of redundant classes and zero elegance involved. I wanted to try out Tailwind for the styling, but I know 
 better than trying to learn entirely new tools on such a tight deadline.
 
-# Other choices
+### Other choices
 
 I split the project into two different git repos, as typically the frontend and backend are not included in the same repo; 
 for me it would lead to a confusing and error-prone workflow.
@@ -54,7 +54,7 @@ I've fiddled with unit tests in Java Spring and JS, but never really learned a f
 
 I deemed building or ejecting the project to be out of scope, as the main things are probably code quality and structure.
 
-# Final words (for now)
+### Final words (for now)
 
 It was a fun little project, although I was in a tremendous hurry. There is a lot of room for improvement; 
 in particular, the styling is very bare-bones and downright horrible in parts. I can maintain frontend 
