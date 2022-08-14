@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Citybike List App (frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## General info
 
-## Available Scripts
+I created this project (with [Create React App](https://github.com/facebook/create-react-app)) to serve 
+as the frontend for Solita's Dev Academy challenge 2022.
 
-In the project directory, you can run:
+You can:
+- view citybike trips and, by clicking on the legend, sort the trips according to name of departure / return station, 
+travel distance, or duration (click again to switch between ascending / descending order)
+- view citybike stations and, by clicking on the listed stations, obtain more info about them
 
-### `npm start`
+## Installation & running
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is run locally on your own computer.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Download the project as a zip file or run 'git clone' on it with your terminal shell of choice.
+2. Make sure you have Node Package Manager ('npm') installed on your computer (refer to Google for the instructions).
+2. In the project folder, run the terminal command 'npm install'.
+4. Then, run the command 'npm start'.
+5. This should open a web page which displayes the trips and stations.
 
-### `npm test`
+6. In order to correctly fetch and display the data, be sure to download and run the backend version of the project as well:
+[citybike-list-backend.](https://github.com/villeloh/citybike-list-backend)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About the project
 
-### `npm run build`
+# Tech choices
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I went with React and plain JS because time was of the essence and they're the most familiar frontend tools to me.
+I managed to install a list-scrolling library before the Wifi broke on my computer, but that was it; I'm not really a 
+frontend guy (more backend & Android), so I'm not too familiar with the library choices for React anyway.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I really struggled with the CSS given the time constraint (I found out about the Academy about a week before the deadline), 
+so there are a lot of redundant classes and zero elegance involved. I wanted to try out Tailwind for the styling, but I know 
+better than trying to learn entirely new tools on such a tight deadline.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Other choices
 
-### `npm run eject`
+I split the project into two different git repos, as typically the frontend and backend are not included in the same repo; 
+for me it would lead to a confusing and error-prone workflow.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Early on in the project, I chose which requirements I wanted to fulfill; I'm pleased to say that in the end 
+I finished almost all of them (with some rough edges). There is no UI to add or delete trips or stations, 
+although the server endpoints do exist for that. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I thought about doing a remote version, but in the end decided against it. Heroku or AWS Amplify would've 
+worked fine for it in theory, but I didn't want to risk losing time to the obscure issues that sometimes crop up with them.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Time pressure and inexperience are also the reasons why there are no tests of any kind for either part of the project.
+I've fiddled with unit tests in Java Spring and JS, but never really learned a framework top-to-bottom.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+I deemed building or ejecting the project to be out of scope, as the main things are probably code quality and structure.
 
-## Learn More
+# Final words (for now)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+It was a fun little project, although I was in a tremendous hurry. There is a lot of room for improvement; 
+in particular, the styling is very bare-bones and downright horrible in parts. I can maintain frontend 
+projects just fine, but doing them from scratch is a bit awkward.
