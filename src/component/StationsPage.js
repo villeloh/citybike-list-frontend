@@ -14,10 +14,17 @@ export default function StationsPage (props) {
   // I'm not sure if it being triggered by clicking a station justifies this.
   // Otoh passing the selectedStationId up to App seems too convoluted.
   // Could've possibly used Context to make the state management a bit neater.
-  useEffect(async () => {
+  useEffect(() => {
 
-    const stationInfo = await API.getStationInfo(selectedStationId);
-    setSelectedStationInfo(stationInfo);
+    const fetchStationInfo = async () => {
+
+      const stationInfo = await API.getStationInfo(selectedStationId);
+      setSelectedStationInfo(stationInfo);
+    };
+    if (selectedStationId) {
+      fetchStationInfo();
+    }
+
   }, [selectedStationId]);
 
   const onStationItemClick = (stationId) => {
@@ -25,26 +32,32 @@ export default function StationsPage (props) {
     setSelectedStationId(stationId);
   };
 
-  const listItems = props.stations?.map(station => {
+  const listItems = props.stations?.filter(station => typeof(station.stationId) === 'number').map(station => {
     return { id: station.stationId, content: <StationListItem station={station} handleClick={onStationItemClick}/>};
   });
 
+  // won't work directly due to the '&' sign (I'm sure there is some way of escaping it)
+  const nameField = 'Name & ';
+
   return (
-    <div className="Stations-Page">
-      <table>
-        <tbody>
-          <tr>
-            <th>Name</th>
-            <th>Address</th>
-          </tr>
-        </tbody>
-      </table>
-      <ReactScrollableList
-        heightOfItem={DEFAULT_LIST_ITEM_HEIGHT}
-        maxItemsToRender={ITEMS_PER_PAGE_LIMIT}
-        style={{ color: '#666' }}
-        listItems={listItems}
-      />
+    <div className="Stations-Page-Container">
+      <div className="Stations-List-Container">     
+        <table className="Stations-List-Legend-Box">
+            <tbody>
+              <tr>
+                <th>{nameField}</th>
+                <th>Address</th>
+              </tr>
+            </tbody>
+        </table>
+        <div className="Stations-List">
+          <ReactScrollableList
+            heightOfItem={DEFAULT_LIST_ITEM_HEIGHT}
+            maxItemsToRender={ITEMS_PER_PAGE_LIMIT}
+            listItems={listItems}
+          />
+        </div>
+      </div>
       <StationInfoBox stationInfo={selectedStationInfo}/>
     </div>
   );

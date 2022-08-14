@@ -18,28 +18,92 @@
 }
 
 .react-scrollable-list-item {
-  color: #456;
-  background-color: #61dafb;
+  background-color: #5590e8;
   margin: 0.5rem;
+}
+
+.Stations-Page-Container {
+  display: flex;
 }
 
 .Station-Info-Box {
+  width: 50%;
   margin: 0.5rem;
-  border: 5px solid black;
+  border: 3px solid black;
+  padding: 0.5rem;
+}
+
+.Station-Info-Box-Cell {
+  padding: 0.6rem;
+  border: 1px solid black;
 }
 
 .Station-List-Item {
+  width:auto;
   margin: 0.4rem;
   margin-right: 0rem;
-  border: 5px solid black;
+  padding: 0.5rem;
+}
+
+.Station-List-Item-Cell {
+  background-color:aliceblue;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin-left: 0.6rem;
+  display: inline-block;
+}
+
+.Station-List-Item-Table {
+
+  justify-content: center;
+  display: grid;
+}
+
+.Stations-List-Legend-Box {
+  justify-content: center;
+  display: grid;
+}
+
+.Trips-List {
+  display: grid;
+  justify-content: center;
+}
+
+.Trip-List-Item {
+  margin: 0.4rem;
+  margin-right: 0rem;
+}
+
+.Trip-List-Item-Cell {
+  background-color:aliceblue;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin: 0.8rem;
+  margin-right: 1.3rem;
+  display: inline-block;
+}
+
+.Trips-Header-Cell {
+  padding: 0.6rem;
+  border: 1px solid black;
+}
+
+.Trips-List-Legend-Box {
+  justify-content: center;
+  display: grid;
 }
 
 .Header {
-  display: flex;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 .Header-Btn {
   flex: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
   margin: 0.5rem;
   border: 3px solid black;
   border-radius: 0.5rem;

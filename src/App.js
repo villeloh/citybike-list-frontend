@@ -16,17 +16,22 @@ function App() {
   const [skip, setSkip] = useState(0);
   const [listItems, setListItems] = useState([]);
 
-  useEffect(() => { async () => {
+  useEffect(() => {
 
-    let items;
-    if (currentPage === 'stations') {
+    const fetchListItems = async () => {
 
-      items = await API.getStations(skip, ITEMS_PER_PAGE_LIMIT);
-    } else {
-      items = await API.getTrips(skip, ITEMS_PER_PAGE_LIMIT, tripOrder);
-    }
-    setListItems(items);
-  }}, [currentPage, skip, tripOrder]);
+      let items;
+      if (currentPage === 'stations') {
+  
+        items = await API.getStations(skip, ITEMS_PER_PAGE_LIMIT);
+      } else {
+        items = await API.getTrips(skip, ITEMS_PER_PAGE_LIMIT, tripOrder);
+      }
+      setListItems(items);
+    };
+    fetchListItems();
+
+  }, [currentPage, skip, tripOrder]);
 
   const showTripsPage = () => {
     setCurrentPage('trips');

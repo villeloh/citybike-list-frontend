@@ -32,22 +32,24 @@ export default function TripsPage (props) {
 
   return (
     <div className="Trips-Page">
-      <table>
+      <h1>TRIPS</h1>
+      <table className="Trips-List-Legend-Box">
         <tbody>
           <tr>
-            <th onClick={() => onHeaderClick('from')}>Started from</th>
-            <th onClick={() => onHeaderClick('to')}>Ended at</th>
-            <th onClick={() => onHeaderClick('dist')}>Distance (km)</th>
-            <th onClick={() => onHeaderClick('dura')}>Duration (minutes)</th>
+            <th className="Trips-Header-Cell" onClick={() => onHeaderClick('from')}>Started from</th>
+            <th className="Trips-Header-Cell" onClick={() => onHeaderClick('to')}>Ended at</th>
+            <th className="Trips-Header-Cell" onClick={() => onHeaderClick('dist')}>Distance (km)</th>
+            <th className="Trips-Header-Cell" onClick={() => onHeaderClick('dura')}>Duration (minutes)</th>
           </tr>
         </tbody>
       </table>
-      <ReactScrollableList
-        heightOfItem={DEFAULT_LIST_ITEM_HEIGHT}
-        maxItemsToRender={ITEMS_PER_PAGE_LIMIT}
-        style={{ color: '#333' }}
-        listItems={listItems}
-      />
+      <div className="Trips-List">
+        <ReactScrollableList
+          heightOfItem={DEFAULT_LIST_ITEM_HEIGHT}
+          maxItemsToRender={ITEMS_PER_PAGE_LIMIT}
+          listItems={listItems}
+        />
+      </div>
     </div>
   );
 }
