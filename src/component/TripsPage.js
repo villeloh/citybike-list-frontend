@@ -32,7 +32,6 @@ export default function TripsPage (props) {
 
   return (
     <div className="Trips-Page">
-      <h1>TRIPS</h1>
       <table className="Trips-List-Legend-Box">
         <tbody>
           <tr>

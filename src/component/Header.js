@@ -17,6 +17,7 @@ export default function Header (props) {
     <div className="Header">
       <button className="Header-Btn" onClick={(e) => handleClick('trips', e)}>Trips</button>
       <button className="Header-Btn" onClick={(e) => handleClick('stations', e)}>Stations</button>
+      <h1>{props.pageTitle || ''}</h1>
     </div>
   );
 }

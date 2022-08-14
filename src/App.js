@@ -65,10 +65,12 @@ function App() {
   } else {
     pageToRender = <TripsPage trips={listItems} selectTripOrder={selectTripOrder}/>;
   }
+  
+  const pageTitle = currentPage[0].toUpperCase() + currentPage.slice(1);
 
   return (
     <div className="App">
-      <Header showTripsPage={showTripsPage} showStationsPage={showStationsPage}/>
+      <Header pageTitle = {pageTitle} showTripsPage={showTripsPage} showStationsPage={showStationsPage}/>
       {pageToRender}
       <Footer showPreviousPage={showPreviousPage} showNextPage={showNextPage}/>
     </div>
